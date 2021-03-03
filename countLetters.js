@@ -1,5 +1,5 @@
-const assertEqual = function (actual, expected) {
-  const addQuotation = function (input) {
+const assertEqual = function(actual, expected) {
+  const addQuotation = function(input) {
     if (typeof (input) === "string") {
       return ("\"" + input + "\"");
     } else {
@@ -13,11 +13,11 @@ const assertEqual = function (actual, expected) {
 
 /* New Code */
 
-const countLetters = function (string) {
+const countLetters = function(string) {
   const stringArr = (string.replace(/\s+/g, '')).split('');
   const newObject = {};
 
-  const count = function (letterArr, letter) {
+  const count = function(letterArr, letter) {
     let count = 0;
     for (let item of letterArr) {
       if (item === letter) {

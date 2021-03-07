@@ -11,3 +11,5 @@ const eqArrays = function(arrayOne, arrayTwo) {
   }
   return (isEqual);
 };
+
+module.exports = eqArrays;

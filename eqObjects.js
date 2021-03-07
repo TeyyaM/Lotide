@@ -17,6 +17,10 @@ const eqObjects = (object1, object2) => {
         if (!eqArrays(object1[key], object2[key])) {
           return (false);
         }
+        // Add recursion in an else if to deal with nested objects
+      } else if (checkIfObject(object1[key]) && checkIfObject(object2[key])) {
+        return (eqObjects(object1[key], object2[key]));
+        // End of new stuff
       } else if (object1[key] !== object2[key]) {
         return (false);
       }
@@ -31,5 +35,6 @@ const eqObjects = (object1, object2) => {
   }
   return (false);
 };
+
 
 module.exports = eqObjects;

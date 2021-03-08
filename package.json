@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@teyya/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simplier reimagining of Lodash coded as an educational exercise for Lighthouse Labs",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/TeyyaM/Lotide.git"
   },
-  "author": "",
+  "author": "Tessa MacLean",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TeyyaM/Lotide/issues"

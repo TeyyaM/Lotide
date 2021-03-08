@@ -1,16 +1,9 @@
-const assertEqual = function(actual, expected) {
-  const addQuotation = function(input) {
-    if (typeof (input) === "string") {
-      return ("\"" + input + "\"");
-    } else {
-      return (input);
-    }
-  };
-  actual = addQuotation(actual);
-  expected = addQuotation(expected);
-  (actual === expected) ? console.log(`💚💚💚Assertion Passed: ${actual} === ${expected}`) : console.log(`🔥🔥🔥Assertion Failed: ${actual} !== ${expected}`);
+const head = array => {
+  if (!Array.isArray(array)) {
+    return ('Invalid entry: Not an array.');
+  } else {
+    return array[0];
+  }
 };
 
-const head = function(array) {
-  return array[0];
-};
+module.exports = head;

@@ -1,5 +1,5 @@
-const assertEqual = function(actual, expected) {
-  const addQuotation = function(input) {
+const assertEqual = function (actual, expected) {
+  const addQuotation = function (input) {
     if (typeof (input) === "string") {
       return ("\"" + input + "\"");
     } else {

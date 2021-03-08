@@ -1,3 +1,5 @@
+// Can't require eqArrays due to circular dependencies
+
 const eqArrays = (arrayOne, arrayTwo) => {
   if (arrayOne.length === arrayTwo.length) {
     for (let i = 0; i < arrayOne.length; i++) {

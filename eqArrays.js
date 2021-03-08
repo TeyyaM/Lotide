@@ -8,8 +8,8 @@ const eqArrays = (arrayOne, arrayTwo) => {
         if (!eqArrays(arrayOne[i], arrayTwo[i])) {
           return (false);
         }
-        // Do object stuff
-      } else if (Array.isArray(arrayOne[i]) === false && typeof arrayOne[i] === 'object' && arrayOne[i] !== null) {
+        // Do object stuff, don't need to check if Array
+      } else if (typeof arrayOne[i] === 'object' && arrayOne[i] !== null) {
         if (!eqObjects(arrayOne[i], arrayTwo[i])) {
           return (false);
         }

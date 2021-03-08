@@ -1,14 +1,14 @@
 const eqArrays = require('./eqArrays');
 
-const assertArraysEqual = function(arrayOne, arrayTwo) {
-  const addQuotation = function(input) {
+const assertArraysEqual = (arrayOne, arrayTwo) => {
+  const addQuotation = input => {
     if (typeof (input) === "string") {
       return ("\"" + input + "\"");
     } else {
       return (input);
     }
   };
-  const addQuoteArray = function(array) {
+  const addQuoteArray = array => {
     let newArr = [];
     for (let item of array) {
       newArr.push(addQuotation(item));

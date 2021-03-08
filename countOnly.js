@@ -1,24 +1,13 @@
-const assertEqual = function(actual, expected) {
-  const addQuotation = function(input) {
-    if (typeof (input) === "string") {
-      return ("\"" + input + "\"");
-    } else {
-      return (input);
-    }
-  };
-  actual = addQuotation(actual);
-  expected = addQuotation(expected);
-  (actual === expected) ? console.log(`💚💚💚Assertion Passed: ${actual} === ${expected}`) : console.log(`🔥🔥🔥Assertion Failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual')
 
 /* New Code */
 
-const countOnly = function(allItems, itemsToCount) {
+const countOnly = (allItems, itemsToCount) => {
   const itemArray = allItems;
   const validItems = [];
   const newObject = {};
 
-  const countValid = function(validArr, key) {
+  const countValid = (validArr, key) => {
     let count;
     for (let valid of validArr) {
       if (valid === key) {
@@ -33,7 +22,7 @@ const countOnly = function(allItems, itemsToCount) {
   };
 
   for (let key in itemsToCount) {
-    const filterArr = function(unfilterArr, word) {
+    const filterArr = (unfilterArr, word) => {
       let filteredArr = [];
       for (let i = 0; i < unfilterArr.length; i++) {
         if (unfilterArr[unfilterArr.indexOf(word)] !== -1 && unfilterArr[unfilterArr.indexOf(word)] === word && itemsToCount[word]) {
@@ -52,23 +41,25 @@ const countOnly = function(allItems, itemsToCount) {
   return (newObject);
 };
 
+module.exports = countOnly;
+
 /* Test Code */
 
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
+// const firstNames = [
+//   "Karl",
+//   "Salima",
+//   "Agouhanna",
+//   "Fang",
+//   "Kavith",
+//   "Jason",
+//   "Salima",
+//   "Fang",
+//   "Joe"
+// ];
 
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+// const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
+// assertEqual(result1["Jason"], 1);
+// assertEqual(result1["Karima"], undefined);
+// assertEqual(result1["Fang"], 2);
+// assertEqual(result1["Agouhanna"], undefined);

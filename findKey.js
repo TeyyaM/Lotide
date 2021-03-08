@@ -1,19 +1,4 @@
-const assertEqual = function(actual, expected) {
-  const addQuotation = function(input) {
-    if (typeof (input) === "string") {
-      return ("\"" + input + "\"");
-    } else {
-      return (input);
-    }
-  };
-  actual = addQuotation(actual);
-  expected = addQuotation(expected);
-  (actual === expected) ? console.log(`💚💚💚Assertion Passed: ${actual} === ${expected}`) : console.log(`🔥🔥🔥Assertion Failed: ${actual} !== ${expected}`);
-};
-
-/* New Code */
-
-const findKey = function(object, callback) {
+const findKey = function (object, callback) {
   for (let key in object) {
     if (callback(object[key])) {
       return (key);
@@ -21,6 +6,8 @@ const findKey = function(object, callback) {
   }
   throw `No such value! Can't find key.`;
 };
+
+module.exports = findKey;
 
 /* Test */
 

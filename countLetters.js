@@ -1,5 +1,5 @@
-const assertEqual = function(actual, expected) {
-  const addQuotation = function(input) {
+const assertEqual = (actual, expected) => {
+  const addQuotation = input => {
     if (typeof (input) === "string") {
       return ("\"" + input + "\"");
     } else {
@@ -13,11 +13,11 @@ const assertEqual = function(actual, expected) {
 
 /* New Code */
 
-const countLetters = function(string) {
+const countLetters = string => {
   const stringArr = (string.replace(/\s+/g, '')).split('');
   const newObject = {};
 
-  const count = function(letterArr, letter) {
+  const count = (letterArr, letter) => {
     let count = 0;
     for (let item of letterArr) {
       if (item === letter) {
@@ -33,4 +33,6 @@ const countLetters = function(string) {
   return (newObject);
 };
 
-console.log(countLetters("lighthouse in the house"));
+module.exports = countLetters;
+
+// console.log(countLetters("lighthouse in the house"));
